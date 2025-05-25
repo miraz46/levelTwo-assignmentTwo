@@ -72,7 +72,7 @@ CHAR(5)
 -- 'Hi' সংরক্ষিত হবে 'Hi   ' (৩টি ফাঁকা জায়গাসহ)
 
 ```
-# 2. Explain the purpose of the WHERE clause in a SELECT statement.
+# 3. Explain the purpose of the WHERE clause in a SELECT statement.
 
 **ব্যাখ্যা** : WHERE ক্লজ এর ব্যবহার SELECT স্টেটমেন্টে খুবই গুরুত্বপূর্ণ, কারণ এটি ডেটাবেজ থেকে নির্দিষ্ট শর্ত অনুযায়ী তথ্য (rows) বের করতে সাহায্য করে।
 যেমনঃ
@@ -93,7 +93,7 @@ WHERE শর্ত;
 একাধিক শর্ত	WHERE age > 18 AND gender = 'Male'
 ```
 
-# 3. What are the LIMIT and OFFSET clauses used for?
+# 4. What are the LIMIT and OFFSET clauses used for?
  **লিমিট** : লিমিট ব্যবহার করে আমরা বলতে পারি, কত গোটা রেকর্ড (row) দেখাতে চাই।
 
 **অফসেট** : অফসেট ব্যবহার করে আমরা বলতে পারি, কতগুলো রেকর্ড বাদ দিয়ে তারপর দেখানো শুরু করতে চাই।
@@ -113,17 +113,6 @@ OFFSET 5
 LIMIT 5;
 ```
 এটি ৬ নম্বর থেকে ১০ নম্বর পর্যন্ত রেকর্ড দেখাবে।
-
-# 4. How can you modify data using UPDATE statements?
-**ব্যাখ্যা** : UPDATE স্টেটমেন্ট ব্যবহার করে আমরা বিদ্যমান ডেটা পরিবর্তন বা আপডেট করতে পারি।
-
- **UPDATE এর গঠন (Syntax)** :
- ```markdown
-UPDATE students
-SET score = 95
-WHERE id = 3;
-```
-এতে শুধু ওই ছাত্রের score আপডেট হবে।
 
 # 5. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
 **ব্যাখ্যা** : SQL ডেটাবেজে ডেটা সাধারণত বিভিন্ন টেবিলে ভাগ করা থাকে। JOIN ব্যবহার করে আমরা:
