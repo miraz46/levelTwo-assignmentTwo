@@ -20,7 +20,7 @@ CREATE TABLE species (
     conservation_status VARCHAR(50)
 );
 
-INSERT INTO speciesommon_name, scientific_name, discovery_date, conservation_status) VALUES
+INSERT INTO species(common_name, scientific_name, discovery_date, conservation_status) VALUES
 ('Snow Leopard', 'Panthera uncia', '1775-01-01', 'Endangered'),
 ('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
 ('Red Panda', 'Ailurus fulgens', '1825-01-01', 'Vulnerable'),
@@ -59,3 +59,48 @@ DROP TABLE sightings
 -- Problem 1
 INSERT INTO rangers (name, region)
 VALUES ('Derek Fox', 'Coastal Plains');
+
+-- Problem 2
+SELECT COUNT(DISTINCT species_id) AS unique_species_count FROM sightings;
+
+-- Problem 3
+SELECT * FROM sightings
+WHERE location ILIKE '%Pass%'; 
+
+-- Problem 4
+SELECT rangers.name, COUNT(*) AS total_sightings FROM sightings
+JOIN "rangers" ON sightings.ranger_id = rangers.ranger_id
+GROUP BY sightings.ranger_id, rangers.name
+ORDER BY sightings.ranger_id ASC;
+
+-- Problem 5
+SELECT common_name FROM species
+LEFT JOIN "sightings" on species.species_id = sightings.species_id
+WHERE sightings.species_id IS NULL;
+
+-- Problem 6
+SELECT species.common_name, sightings.sighting_time,rangers.name FROM sightings
+JOIN "species" on sightings.species_id = species.species_id
+JOIN "rangers" ON sightings.ranger_id = rangers.ranger_id
+ORDER BY sightings.sighting_time DESC LIMIT 2;
+
+-- Problem 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
